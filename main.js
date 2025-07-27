@@ -15,3 +15,69 @@ Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subit
 e stampiamo tutto in console.
 
 */
+
+
+//Snack 1
+
+//creo il mio array con due proprietà 
+
+const bikes = [
+    {
+        bikeNames: "Bianchi",
+        weight: 20
+    },
+    {
+        bikeNames: "Atala",
+        weight: 34
+    },
+    {
+        bikeNames: "Colnago",
+        weight: 28
+    },
+    {
+        bikeNames: "Pinarello",
+        weight: 25
+    },
+    {
+        bikeNames: "De rosa",
+        weight: 5
+    }
+];
+
+// dovrò ciclare all'interno del mio array e valutare il peso di ogni bici
+// per dopo trovare quello che pesa meno
+
+
+// questo ciclo inutile
+for (let key in bikes) {
+    console.log(bikes[key]);
+
+}
+
+// proviamo con il classico ciclo
+// creo un array con tutti i pesi
+let bikesWeight = [];
+for (let i = 0; i < bikes.length; i++) {
+    const bike = bikes[i];
+    console.log(bike.weight);
+    bikesWeight.push(bike.weight);
+}
+
+console.log(bikesWeight);
+
+// trovo il numero minore e lo salvo in una variabile
+const SmallWeight = Math.min(...bikesWeight);
+console.log(SmallWeight);
+
+// provo a loggare in console la bici che ha questo minore peso
+for (let i = 0; i < bikes.length; i++) {
+    const bike = bikes[i];
+
+    if (bike.weight === SmallWeight) {
+
+        console.log(`La bibi che pesa meno è ${bike.bikeNames}`);
+
+    } else {
+
+    }
+}
