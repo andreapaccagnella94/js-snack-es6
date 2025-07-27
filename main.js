@@ -6,18 +6,8 @@ Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare a schermo la bici con peso minore.
 
-Snack2
-Creare un array di oggetti di squadre di calcio.
-Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
-Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti
-e stampiamo tutto in console.
-
 */
 
-
-//Snack 1
 
 //creo il mio array con due proprietà 
 
@@ -80,4 +70,70 @@ for (let i = 0; i < bikes.length; i++) {
     } else {
 
     }
+}
+
+
+/*
+Snack2
+Creare un array di oggetti di squadre di calcio.
+Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
+Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti
+e stampiamo tutto in console.
+*/
+
+// creo il mio array
+const footballTeams = [
+    {
+        teamName: "Milan",
+        pointsMade: 0,
+        foulsSuffered: 0
+    },
+    {
+        teamName: "Inter",
+        pointsMade: 0,
+        foulsSuffered: 0
+    },
+    {
+        teamName: "Juventus",
+        pointsMade: 0,
+        foulsSuffered: 0
+    },
+]
+
+// questo ciclo solo per vedere cosa c'è dentro il mio array
+for (let key in footballTeams) {
+    console.log(footballTeams[key]);
+}
+
+// proviamo con il classico ciclo
+
+for (let i = 0; i < footballTeams.length; i++) {
+    const team = footballTeams[i];
+    team.pointsMade = getRndInteger(1, 100);
+    team.foulsSuffered = getRndInteger(1, 100)
+}
+
+// ciclo per vedere il risultato
+for (let key in footballTeams) {
+    console.log(footballTeams[key]);
+}
+
+// creo un nuovo array vuoto che andrò a popolare con solo alcune informazioni
+let easyFootballTeams = [];
+for (let i = 0; i < footballTeams.length; i++) {
+    const team = footballTeams[i];
+    easyFootballTeams.push({ teamName: team.teamName });
+    easyFootballTeams.push({ foulsSuffered: team.foulsSuffered });
+}
+console.log(easyFootballTeams);
+
+
+
+
+
+// funzione copiata da w3school per generare un numero a caso tra due numeri compresi
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
