@@ -26,11 +26,11 @@ const bikes = [
     },
     {
         bikeNames: "Pinarello",
-        weight: 25
+        weight: 10
     },
     {
         bikeNames: "De rosa",
-        weight: 5
+        weight: 38
     }
 ];
 
@@ -51,15 +51,25 @@ for (let i = 0; i < bikes.length; i++) {
     const bike = bikes[i];
     console.log(bike.weight);
     bikesWeight.push(bike.weight);
+
+    // trovo il numero minore e lo salvo in una variabile
+    const SmallWeight = Math.min(...bikesWeight);
+    console.log(SmallWeight);
+
+    //condizione per trovare la bici che pesa meno
+    if (bike.weight === SmallWeight) {
+
+        console.log(`La bibi che pesa meno è ${bike.bikeNames}`);
+
+    } else {
+
+    }
 }
 
 console.log(bikesWeight);
 
-// trovo il numero minore e lo salvo in una variabile
-const SmallWeight = Math.min(...bikesWeight);
-console.log(SmallWeight);
 
-// provo a loggare in console la bici che ha questo minore peso
+/* // provo a loggare in console la bici che ha questo minore peso
 for (let i = 0; i < bikes.length; i++) {
     const bike = bikes[i];
 
@@ -70,7 +80,7 @@ for (let i = 0; i < bikes.length; i++) {
     } else {
 
     }
-}
+} */
 
 
 /*
