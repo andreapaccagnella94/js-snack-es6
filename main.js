@@ -8,7 +8,6 @@ Stampare a schermo la bici con peso minore.
 
 */
 
-
 //creo il mio array con due proprietà 
 
 const bikes = [
@@ -18,7 +17,7 @@ const bikes = [
     },
     {
         bikeNames: "Atala",
-        weight: 34
+        weight: 4
     },
     {
         bikeNames: "Colnago",
@@ -37,36 +36,40 @@ const bikes = [
 // dovrò ciclare all'interno del mio array e valutare il peso di ogni bici
 // per dopo trovare quello che pesa meno
 
-
 // questo ciclo inutile
 for (let key in bikes) {
     console.log(bikes[key]);
-
 }
 
-// proviamo con il classico ciclo
-// creo un array con tutti i pesi
+// creo un array vuoto che andrò a popolare con tutti i pesi
 let bikesWeight = [];
+// creo delle variabili utili che dopo il ciclo sarranno dei valori specifici
+let SmallWeight = 0;
+let bikeSmallWeight = "";
+// proviamo con il classico ciclo
 for (let i = 0; i < bikes.length; i++) {
     const bike = bikes[i];
     console.log(bike.weight);
     bikesWeight.push(bike.weight);
 
-    // trovo il numero minore e lo salvo in una variabile
-    const SmallWeight = Math.min(...bikesWeight);
+    // trovo il numero minore e lo salvo nella variabile che ho creato
+    SmallWeight = Math.min(...bikesWeight);
     console.log(SmallWeight);
 
     //condizione per trovare la bici che pesa meno
-    if (bike.weight === SmallWeight) {
-
-        console.log(`La bibi che pesa meno è ${bike.bikeNames}`);
-
+    if (bike.weight <= SmallWeight) {
+        // console.log(`La bibi che pesa meno è ${bike.bikeNames}`);
+        bikeSmallWeight = bike.bikeNames
     } else {
 
     }
 }
 
 console.log(bikesWeight);
+
+console.log(SmallWeight);
+
+console.log(`La bibi che pesa meno è ${bikeSmallWeight}`);
 
 
 /* // provo a loggare in console la bici che ha questo minore peso
