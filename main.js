@@ -137,6 +137,7 @@ for (let key in footballTeams) {
 let easyFootballTeams = [];
 for (let i = 0; i < footballTeams.length; i++) {
     const team = footballTeams[i];
+    // occhio qua ho fatto due oggetti per ogni iterazione che è sbagliato
     easyFootballTeams.push({ teamName: team.teamName });
     easyFootballTeams.push({ foulsSuffered: team.foulsSuffered });
 }
